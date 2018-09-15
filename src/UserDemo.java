@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /**
  * 
  */
@@ -10,26 +12,30 @@ public class UserDemo {
 	
 	public static void main (String[] args) {
 		
-		user kalle = new user("Kalle");
-		user anna = new user("Anna");
-		user peter = new user("Peter");
-		user thea = new user();
+		double ageSum = 0;
+		double ageAvarage = 0;
+		double accountSum = 0;
+		double accountAvarage = 0;
 		
-		System.out.println("Name: " + kalle.getName());
-		System.out.println("User_ID: " + kalle.getUserId());
-		System.out.println("Name: " + peter.getName());
-		System.out.println("User_ID: " + peter.getUserId());
-		System.out.println("Name: " + anna.getName());
-		System.out.println("User_ID: " + anna.getUserId());
-		System.out.println("Name: " + thea.getName());
-		System.out.println("User_ID: " + thea.getUserId());
+		User kalle = new User("Kalle", 39, 12000);
+		User anna = new User("Anna", 42, 43000);
+		User peter = new User("Peter", 50, 292929);
+		User thea = new User();
+		ArrayList<User> users = new ArrayList<User>();
+		users.add(kalle);
+		users.add(anna);
+		users.add(peter);
+		users.add(thea);
+		users.add(new User("Dick", 12, 90000));
 		
-		thea.setName("Thea");
-
-		System.out.println("Name: " + thea.getName());
-		System.out.println("User_ID: " + thea.getUserId());
-
-
+		for (User element : users) {
+			ageSum += element.getMeasure();
+			accountSum += element.getAccountBalance();
+		}
+		ageAvarage = ageSum / users.size();
+		accountAvarage = accountSum / users.size();
+		System.out.println("Avarage age: " + ageAvarage);
+		System.out.println("Savings avarage: " + accountAvarage);
 
 	}
 
