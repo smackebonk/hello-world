@@ -17,8 +17,14 @@ public class user {
 		this.userId = lastAssignedId;
 		this.name = name;
 	}
+	public user() {
+		this("No name");
+	}
 	public String getName() {
 		return this.name;
+	}
+	public void setName(String name) {
+		this.name = name;
 	}
 	public int getUserId() {
 		return this.userId;
