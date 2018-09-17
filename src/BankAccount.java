@@ -20,5 +20,5 @@ public class BankAccount implements Measurable{
 		return balance;
 	}
 
-	
+	//Kalle
 }
